@@ -12,24 +12,6 @@ body {
     padding: 0;
 }
 
-<<<<<<< HEAD
-/* Headings */
-h1, h2, h3 {
-    font-family: 'Lora', serif;
-    font-weight: bold;
-    color: #00274D;
-    margin-bottom: 15px;
-}
-
-/* Links */
-a {
-    color: #0056b3;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #004080;
-=======
 /* Header */
 .header {
     background: #333;
@@ -76,240 +58,10 @@ a:hover {
 .nav-menu a:hover {
     background: white;
     color: black;
->>>>>>> 24a8e5a74f11d04ee614288518828abf0f26071e
 }
 
 /* Sections */
 .section {
-<<<<<<< HEAD
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-/* Navigation */
-.head {
-    background: #00274D;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
-
-/* Professor Name */
-.professor-name {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 0;
-    color: white;
-}
-
-.professor-title {
-    font-size: 1.4rem;
-    font-style: italic;
-    color: #e0e0e0;
-    margin-top: 5px;
-}
-
-.professor-desc {
-    font-size: 1.2rem;
-    margin-top: 8px;
-}
-
-/* Projects Section - 3 Cards Per Row */
-.projects-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-content: center;
-    align-items: start;
-    padding: 10px;
-}
-
-/* Cards */
-.card {
-    background: white;
-    border-radius: 6px;
-    padding: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-    text-align: center;
-}
-
-.card:hover {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Card Images */
-.card__image {
-    background-color: #ddd;
-    width: 100%;
-    max-height: 220px;
-    overflow: hidden;
-    border-bottom: solid 2px #ccc;
-}
-
-.card__image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 6px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.card__image img:hover {
-    transform: scale(1.05);
-}
-
-/* Card Content */
-.card__content {
-    padding: 12px;
-}
-
-/* Project Titles */
-.card__article h2 {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.card__article a {
-    text-decoration: none;
-    color: #00274D;
-    transition: color 0.3s ease;
-}
-
-.card__article a:hover {
-    color: #0056b3;
-}
-
-/* Project Metadata */
-.card__meta {
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 10px;
-}
-
-/* Project Tags */
-.project-technology {
-    display: inline-block;
-    background: #eef2f7;
-    color: #00274D;
-    padding: 4px 10px;
-    margin: 5px;
-    font-size: 0.85rem;
-    border-radius: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* Publications Section */
-#publications {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-#publications h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Publication Cards */
-.publication-card {
-    background: white;
-    border-radius: 6px;
-    padding: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-    margin-bottom: 20px;
-}
-
-.publication-card:hover {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.publication-card h3 {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.publication-card a {
-    text-decoration: none;
-    color: #00274D;
-    transition: color 0.3s ease;
-}
-
-.publication-card a:hover {
-    color: #0056b3;
-}
-
-.publication-card p {
-    font-size: 1rem;
-    margin: 5px 0;
-}
-
-/* Responsive Grid for Projects & Publications */
-@media screen and (max-width: 1024px) {
-    .projects-wrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .projects-wrapper {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-/* Students Section */
-.students-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.student-card {
-    width: 280px;
-    background: white;
-    padding: 15px;
-    border-radius: 6px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-}
-
-.student-card:hover {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.student-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-}
-
-.student-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 6px 12px;
-    background: #00274D;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-.student-link:hover {
-    background: #004080;
-=======
     max-width: 900px;
     margin: 40px auto;
     padding: 30px;
@@ -474,18 +226,11 @@ a:hover {
 
 .assistant-card a:hover {
     color: #004080;
->>>>>>> 24a8e5a74f11d04ee614288518828abf0f26071e
 }
 
 /* Footer */
 footer {
     text-align: center;
-<<<<<<< HEAD
-    background: #00274D;
-    color: white;
-    padding: 20px;
-    font-size: 0.9rem;
-=======
     background: #333;
     color: white;
     padding: 20px;
@@ -505,5 +250,4 @@ footer {
         flex-direction: column;
         align-items: center;
     }
->>>>>>> 24a8e5a74f11d04ee614288518828abf0f26071e
 }
