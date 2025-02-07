@@ -1,101 +1,86 @@
-
 $(document).ready(function() {
     general_utils();
-    blog_posts();
-})
-
+    load_research_papers();
+    load_research_assistants();
+});
 
 function general_utils() {
-    // smooth scrolling for nav links
-    $('.head-menu-wrap a').smoothScroll();
-    $('.extra-link a').smoothScroll();
-    $('.profile-pic-link').smoothScroll();
-
-    $('.skillbar').each(function(){
-		$(this).find('.skillbar-bar').animate({
-			width: $(this).attr('data-percent')
-		}, 1000);
-	});
+    // Smooth scrolling for nav links
+    $('.nav-menu a').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 800);
+        }
+    });
 }
 
-function blog_posts() {
-
-    // keeping it static, can be fetched from a blog dynamically as well
-    let posts = [
+// Load Research Papers
+function load_research_papers() {
+    let papers = [
         {
-            url: 'https://www.nagekar.com/2017/02/trip-to-bramhatal-uttarakhand.html',
-            title: 'Trek To Bramhatal (Uttarakhand)',
+            url: 'https://example.com/paper1.pdf',
+            title: 'A Scalable Database Model for Radio Telescope Data',
+            authors: 'G. Balekaki, M. Kuttel',
+            conference: 'SAICSIT ’19, Skukuza, South Africa'
         },
         {
-            url: 'https://www.nagekar.com/2017/08/privacy.html',
-            title: 'Privacy - How I Converted',
+            url: 'https://example.com/paper2.pdf',
+            title: 'Performance Evaluation of an Integrated RFI Database',
+            authors: 'G. Balekaki, M. Kuttel',
+            conference: 'SAICSIT ’20, Cape Town, South Africa'
         },
         {
-            url: 'https://www.nagekar.com/2018/01/jagriti-yatra.html',
-            title: 'Jagriti Yatra 2017',
-        },
-        {
-            url: 'https://www.nagekar.com/2017/08/private-cloud-part-2.html',
-            title: 'Private Cloud Part 2 | Encrypted Storage With NextCloud',
-        },
-        {
-            url: 'https://www.nagekar.com/2018/07/eli5-how-https-works.html',
-            title: 'ELI5 - How HTTPS Works',
-        },
+            url: 'https://example.com/paper3.pdf',
+            title: 'Impact of High TCP Initial Window on Congested Networks',
+            authors: 'G. Balekaki, I. A. Rai',
+            conference: 'AFRICOMM, Yaoundé, Cameroon'
+        }
     ];
 
-    let post_html = [];
-
-    for(let post of posts) {
-
-        let tags;
-        
-        if(post.tags) {
-            tags = post.tags.map(tag => {
-                return `<a href="https://www.nagekar.com/tags#${tag}">${tag}</a>`
-            })
-        }
-
-        let post_template = `
-        <div class="blog-post" onclick="blog_link_click('${post.url}');">
-
-            <div class="blog-link">
-    
-                <h3><a href="${post.url}">${post.title}</a></h3>            
-
-            </div>
-    
-            <div class="blog-goto-link">
-                <img class="blog-arrow" src="/assets/images/right-open-mini.svg"/>
-            </div>
+    let papers_html = papers.map(paper => `
+        <div class="research-paper">
+            <h3><a href="${paper.url}" target="_blank">${paper.title}</a></h3>
+            <p><strong>Authors:</strong> ${paper.authors}</p>
+            <p><strong>Conference:</strong> ${paper.conference}</p>
         </div>
-        `;
+    `).join("");
 
-        post_html.push(post_template);
-    }
-
-    // for the more posts link
-    let post_template = `
-    <div class="blog-post more-blogs" onclick="blog_link_click('https://www.nagekar.com');">
-
-        <div class="blog-link">
-
-            <h3><a href="https://www.nagekar.com">Visit the blog for more posts</a></h3>            
-
-        </div>
-
-        <div class="blog-goto-link">
-            <img class="blog-arrow" src="/assets/images/right-open-mini.svg"/>
-        </div>
-    </div>
-    `;
-
-    post_html.push(post_template);
-
-    $('#rss-feeds').html(post_html);
-
+    $('#publications-list').html(papers_html);
 }
 
-function blog_link_click(url) {
-    window.location = url;
+// Load Research Assistants
+function load_research_assistants() {
+    let assistants = [
+        {
+            name: 'John Doe',
+            role: 'Graduate Research Assistant',
+            focus: 'High-Performance Computing',
+            linkedin: 'https://linkedin.com/in/johndoe'
+        },
+        {
+            name: 'Jane Smith',
+            role: 'Undergraduate Research Assistant',
+            focus: 'Machine Learning in Security',
+            linkedin: 'https://linkedin.com/in/janesmith'
+        },
+        {
+            name: 'Robert Johnson',
+            role: 'PhD Researcher',
+            focus: 'Big Data Optimization',
+            linkedin: 'https://linkedin.com/in/robertjohnson'
+        }
+    ];
+
+    let assistants_html = assistants.map(assistant => `
+        <div class="assistant-card">
+            <h3>${assistant.name}</h3>
+            <p><strong>Role:</strong> ${assistant.role}</p>
+            <p><strong>Research Focus:</strong> ${assistant.focus}</p>
+            <p><a href="${assistant.linkedin}" target="_blank">LinkedIn Profile</a></p>
+        </div>
+    `).join("");
+
+    $('#assistants-list').html(assistants_html);
 }
